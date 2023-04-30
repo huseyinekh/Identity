@@ -1,0 +1,19 @@
+﻿@if (User.Identity!.IsAuthenticated)
+{
+    <div class="dropdown">
+        <button class="btn btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            @User.Identity.Name
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" asp-route-returnurl="/Home/Index" asp-action="Logout"asp-controller="Member">Çıxış </a></li>
+        </ul>
+    </div>
+}
+else
+{
+
+    <a asp-controller="Home" asp-action="signUp" class="btn btn-outline-success">Qeydiyyat</a>
+    <a asp-controller="Home" asp-action="SignIn" class="btn btn-outline-success mx-2">Daxil ol</a>
+}
